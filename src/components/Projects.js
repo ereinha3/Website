@@ -1,33 +1,5 @@
 import React, {useState} from 'react';
 
-const projects = {
-    softwareDevelopment: [
-      'Guppy - Integrated payment portal for student organizations',
-      'Portfolio Website - Showcasing my work and skills',
-    ],
-    machineLearning: [
-      'Balloon Path Prediction using GraphCast',
-      'Neural Network for Atmospheric Condition Prediction',
-    ],
-    parallelism: [
-      'Ray-based parallel processing for simulation tasks',
-      'Distributed deep learning for large-scale datasets',
-    ],
-  };
-  
-  const ProjectCategory = ({ title, projects }) => (
-    <div className="my-4">
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <ul className="list-disc pl-6">
-        {projects.map((project, index) => (
-          <li key={index} className="mb-1">
-            {project}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-
 const Projects = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     return (
