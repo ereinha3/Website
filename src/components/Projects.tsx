@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 type Category = 'softwareDevelopment' | 'machineLearning' | 'parallelism' | 'showcase' | null;

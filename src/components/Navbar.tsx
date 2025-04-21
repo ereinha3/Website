@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 // Styles that can't be handled by Tailwind
 const svgAnimations = `

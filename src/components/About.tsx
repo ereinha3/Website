@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import Carousel from './Carousel';
 
