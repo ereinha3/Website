@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const languages = [
     { name: 'JavaScript', size: 'large', level: 1, position: { x: 65, y: 10 }, mobilePosition: { x: 70, y: 10 } },
@@ -29,6 +30,7 @@ const technologies = [
 
 const SkillCloud = ({ items, title }: { items: Array<{ name: string, size: string, level: number, position: { x: number, y: number }, mobilePosition: { x: number, y: number } }>, title: string }) => {
     const [isMobile, setIsMobile] = useState(false);
+    const ref = useScrollAnimation();
 
     useEffect(() => {
         // Set initial value
@@ -47,9 +49,22 @@ const SkillCloud = ({ items, title }: { items: Array<{ name: string, size: strin
         };
     }, []);
 
+    // Add a class to make the component visible immediately on page load
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.classList.add('animate-in');
+            
+            // Also add animate-in to all child elements with animate-ready class
+            const childElements = ref.current.querySelectorAll('.animate-ready');
+            childElements.forEach(element => {
+                element.classList.add('animate-in');
+            });
+        }
+    }, []);
+
     return (
-        <div className="w-full lg:w-[49%] my-[2vh] md:my-[5%] mx-[1%]">
-            <div className="text-center text-[2rem] mb-[4vh] md:mb-[5vh] mx-auto">
+        <div ref={ref} className="animate-ready w-full lg:w-[49%] my-[2vh] md:my-[5%] mx-[1%]">
+            <div className="animate-ready delay-100 text-center text-[2rem] mb-[4vh] md:mb-[5vh] mx-auto">
                 {title}
             </div>
             <div className="relative h-[25vh] md:h-[40vh]">
@@ -84,10 +99,25 @@ const SkillCloud = ({ items, title }: { items: Array<{ name: string, size: strin
 };
 
 const Experience = () => {
+    const ref = useScrollAnimation();
+    
+    // Add a class to make the component visible immediately on page load
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.classList.add('animate-in');
+            
+            // Also add animate-in to all child elements with animate-ready class
+            const childElements = ref.current.querySelectorAll('.animate-ready');
+            childElements.forEach(element => {
+                element.classList.add('animate-in');
+            });
+        }
+    }, []);
+    
     return (
-        <div className="w-[85%] lg:w-[70%] my-[10vh] md:my-[40vh] mx-auto flex flex-col items-center justify-center" id="experience">
-            <div className="text-center text-[2.5rem] mb-[3vh] md:mb-[5vh] mx-auto">Experience</div>
-            <div className="w-full text-[1.25rem] md:text-[1.5rem] tracking-[0.1rem] text-center mb-[5vh] md:mb-[8vh]">
+        <div ref={ref} className="animate-ready w-[85%] lg:w-[70%] my-[10vh] md:my-[40vh] mx-auto flex flex-col items-center justify-center" id="experience">
+            <div className="animate-ready delay-100 text-center text-[2.5rem] mb-[3vh] md:mb-[5vh] mx-auto">Experience</div>
+            <div className="animate-ready delay-200 w-full text-[1.25rem] md:text-[1.5rem] tracking-[0.1rem] text-center mb-[5vh] md:mb-[8vh]">
                 <p className="indent-8">
                     I've worked with a variety of technologies throughout under-graduate curriculumn, clubs, and personal projects. 
                     The technologies and languages below are emphasized in order of experience. 

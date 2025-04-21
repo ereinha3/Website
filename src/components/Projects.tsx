@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 type Category = 'softwareDevelopment' | 'machineLearning' | 'parallelism' | 'showcase' | null;
 
@@ -116,18 +117,29 @@ const projectData: Project[] = [
         link: "https://play.unity.com/mg/other/webgl-b6o",
         category: "softwareDevelopment"
     },
-
 ];
 
 const Projects = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category>('showcase');
+    const ref = useScrollAnimation();
+    
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.classList.add('animate-in');
+            
+            const childElements = ref.current.querySelectorAll('.animate-ready');
+            childElements.forEach(element => {
+                element.classList.add('animate-in');
+            });
+        }
+    }, []);
     
     return (
-        <div className="w-[85%] md:w-[70%] my-[20vh] md:my-[40vh] mx-auto flex flex-col items-center justify-center" id="projects">
-            <div className="text-center text-[2.5rem] mb-[5vh] md:my-[10vh] mx-auto">Projects</div>
+        <div ref={ref} className="animate-ready w-[85%] md:w-[70%] my-[20vh] md:my-[40vh] mx-auto flex flex-col items-center justify-center" id="projects">
+            <div className="animate-ready delay-100 text-center text-[2.5rem] mb-[5vh] md:my-[10vh] mx-auto">Projects</div>
             
             {/* Introduction Text */}
-            <div className="w-full text-center mb-12">
+            <div className="animate-ready delay-200 w-full text-center mb-12">
                 <p className="text-[1.25rem] md:text-[1.5rem] tracking-[.1rem]">
                     I love working with Generative AI and Graph Machine Learning, 
                     improving code efficiency through parallelism, and exploring their intersection. 
@@ -136,7 +148,7 @@ const Projects = () => {
             </div>
 
             {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
+            <div className="animate-ready delay-300 flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
                 {['Showcase', 'Software Development', 'Machine Learning', 'Parallelism'].map((category) => {
                     const categoryValue = category === 'Showcase' ? 'showcase' : 
                         category === 'Software Development' ? 'softwareDevelopment' :
@@ -158,7 +170,7 @@ const Projects = () => {
             </div>
 
             {/* Projects Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="animate-ready delay-400 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {projectData.map((project, index) => (
                     <div key={index} 
                          className={`${
