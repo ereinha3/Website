@@ -38,6 +38,17 @@ const ChatBot: React.FC = () => {
     };
   }, [isOpen]);
 
+  // Parse Markdown links in text
+  const parseMarkdownLinks = (text: string): string => {
+    // Regular expression to match Markdown links: [text](url)
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    
+    // Replace Markdown links with HTML links
+    return text.replace(linkRegex, (match, text, url) => {
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 underline">${text}</a>`;
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
@@ -77,9 +88,12 @@ const ChatBot: React.FC = () => {
       const data: ChatResponse = await response.json();
       console.log('API response data:', data);
       
+      // Parse Markdown links in the response
+      const parsedContent = parseMarkdownLinks(data.response);
+      
       const assistantMessage: Message = {
         role: 'assistant',
-        content: data.response,
+        content: parsedContent,
         timestamp: new Date().toISOString(),
       };
       
@@ -187,9 +201,8 @@ const ChatBot: React.FC = () => {
                           ? 'bg-black text-white'
                           : 'bg-gray-100 text-gray-800'
                       }`}
-                    >
-                      {message.content}
-                    </div>
+                      dangerouslySetInnerHTML={{ __html: message.content }}
+                    />
                     <div className="text-xs text-gray-500 mt-1 px-1">
                       {formatTimestamp(message.timestamp)}
                     </div>
