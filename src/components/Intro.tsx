@@ -43,7 +43,7 @@ const Intro = () => {
             <img 
                 src={'/headshot.png'} 
                 alt={'Headshot'} 
-                className="animate-ready delay-400 absolute right-0 bottom-0 w-[45vw] h-full object-cover hidden md:block"
+                className="animate-ready delay-400 absolute right-0 bottom-0 w-[40vw] h-full object-cover hidden md:block"
             />
             <div className="animate-ready delay-400 absolute right-0 bottom-0 h-[0.5vw] md:h-[0.3vw] hidden md:block -mb-1 bg-black w-[50vw] z-10" />
             <div className="animate-ready delay-400 absolute left-0 bottom-0 h-[0.5vw] md:h-[0.3vw] hidden md:block -mb-1 bg-black w-[10vw] z-10" />
