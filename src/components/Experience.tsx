@@ -63,14 +63,16 @@ const SkillCloud = ({ items, title }: { items: Array<{ name: string, size: strin
     }, []);
 
     return (
-        <div ref={ref} className="animate-ready w-full lg:w-[49%] my-[2vh] md:my-[5%] mx-[1%]">
-            <div className="animate-ready delay-100 text-center text-[2rem] mb-[4vh] md:mb-[5vh] mx-auto">
-                {title}
+        <div ref={ref} className="animate-ready w-full lg:w-[40vw] my-[1vh] md:my-[2vh]">
+            <div className="animate-ready delay-100 text-center text-[2.5rem] mb-[2vh] md:mb-[3vh] mx-auto font-semibold flex flex-col items-center justify-center">
+                <p className='mb-2 animate-ready delay-100'>{title}</p>
+                <div className="animate-ready delay-200 h-full w-[6vw] flex flex-col items-center justify-center">
+                    <div className="animate-ready delay-200 h-[0.3rem] w-full bg-black"/>
+                </div>
             </div>
-            <div className="relative h-[25vh] md:h-[40vh]">
+            <div className="relative h-[30vh] md:h-[40vh]">
                 {items.map((item, index) => {
                     const position = isMobile ? item.mobilePosition : item.position;
-                    
                     return (
                         <div
                             key={item.name}
@@ -101,12 +103,10 @@ const SkillCloud = ({ items, title }: { items: Array<{ name: string, size: strin
 const Experience = () => {
     const ref = useScrollAnimation();
     
-    // Add a class to make the component visible immediately on page load
     useEffect(() => {
         if (ref.current) {
             ref.current.classList.add('animate-in');
             
-            // Also add animate-in to all child elements with animate-ready class
             const childElements = ref.current.querySelectorAll('.animate-ready');
             childElements.forEach(element => {
                 element.classList.add('animate-in');
@@ -115,27 +115,53 @@ const Experience = () => {
     }, []);
     
     return (
-        <div ref={ref} className="animate-ready w-[85%] lg:w-[70%] my-[10vh] md:my-[40vh] mx-auto flex flex-col items-center justify-center" id="experience">
-            <div className="animate-ready delay-100 text-center text-[2.5rem] mb-[3vh] md:mb-[5vh] mx-auto">Experience</div>
-            <div className="animate-ready delay-200 w-full text-[1.25rem] md:text-[1.5rem] tracking-[0.1rem] text-center mb-[5vh] md:mb-[8vh]">
-                <p className="indent-8">
-                    I've worked with a variety of technologies throughout under-graduate curriculumn, clubs, and personal projects. 
-                    The technologies and languages below are emphasized in order of experience. 
-                    Outside of these, I also have experience with 
-                    <a className="hover:text-[#AAA]" href="https://leetcode.com/u/ereinha3/"> dynamic programming</a>, 
-                    <a className="hover:text-[#AAA]" href="https://github.com/ereinha3/Operating-Systems/tree/main/Project1"> OS management</a>, 
-                    <a className="hover:text-[#AAA]" href="https://github.com/ereinha3/Operating-Systems/tree/main/Project3"> parallelism</a>, 
-                    <a className="hover:text-[#AAA]" href="https://github.com/ereinha3/Introduction-to-Cryptography"> cryptography</a>, 
-                    many Python libraries including PyTorch, 
-                    <a className="hover:text-[#AAA]" href="https://github.com/ereinha3/Watch-Profits-Soar-to-the-Ether"> TensorFlow</a>, 
-                    and a versatile background in Applied Mathematics.
-                </p>
+        <section id="experience" className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white py-24 pt-[20vh]">
+            <div ref={ref} className="animate-ready mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Title Section */}
+                <div className="animate-ready delay-100 flex flex-col items-center justify-center w-full mb-[10vh]">
+                    <div className="animate-ready delay-200 h-full w-[70vw] ml-[30vw] flex flex-col items-center justify-center mb-8">
+                        <div className="animate-ready delay-200 h-[0.3rem] w-full bg-black"/>
+                    </div>
+                    <div className="animate-ready delay-200 h-full w-full mx-auto flex items-center justify-center mb-8">  
+                        <div className="animate-ready delay-200 h-full w-full flex flex-col items-center justify-center">
+                            <div className="animate-ready delay-200 h-[0.3rem] w-[5vw] ml-auto bg-black"/>
+                        </div>
+                        <h2 className="animate-ready delay-100 text-4xl md:text-5xl font-bold text-black px-4">
+                            Experience
+                        </h2>
+                        <div className="animate-ready delay-200 h-full w-full flex flex-col items-center justify-center">
+                            <div className="animate-ready delay-200 h-[0.3rem] w-[5vw] mr-auto bg-black"/>
+                        </div>
+                    </div>
+                    
+                    <div className="animate-ready delay-200 h-full w-[70vw] mr-[30vw] flex flex-col items-center justify-center">
+                        <div className="animate-ready delay-200 h-[0.3rem] w-full bg-black"/>
+                    </div>
+                </div>
+
+                {/* Introduction Card */}
+                <div className="animate-ready delay-300 p-8 mb-8 w-[70vw] text-center mx-auto">
+                    <p className="text-2xl text-gray-700 leading-relaxed">
+                        I've worked with a variety of technologies throughout under-graduate curriculumn, clubs, and personal projects. 
+                        The technologies and languages below are emphasized in order of experience. 
+                        Outside of these, I also have experience with{' '}
+                        <a className="text-blue-600 hover:text-blue-800 transition-colors font-semibold" href="https://leetcode.com/u/ereinha3/">dynamic programming</a>,{' '}
+                        <a className="text-blue-600 hover:text-blue-800 transition-colors font-semibold" href="https://github.com/ereinha3/Operating-Systems/tree/main/Project1">OS management</a>,{' '}
+                        <a className="text-blue-600 hover:text-blue-800 transition-colors font-semibold" href="https://github.com/ereinha3/Operating-Systems/tree/main/Project3">parallelism</a>,{' '}
+                        <a className="text-blue-600 hover:text-blue-800 transition-colors font-semibold" href="https://github.com/ereinha3/Introduction-to-Cryptography">cryptography</a>,{' '}
+                        many Python libraries including PyTorch,{' '}
+                        <a className="text-blue-600 hover:text-blue-800 transition-colors font-semibold" href="https://github.com/ereinha3/Watch-Profits-Soar-to-the-Ether">TensorFlow</a>,{' '}
+                        and a versatile background in Applied Mathematics.
+                    </p>
+                </div>
+
+                {/* Skill Clouds */}
+                <div className="animate-ready delay-400 flex flex-col justify-center items-center lg:flex-row w-full gap-0 lg:gap-4">
+                    <SkillCloud items={languages} title="Languages" />
+                    <SkillCloud items={technologies} title="Technologies" />
+                </div>
             </div>
-            <div className="flex flex-col lg:flex-row w-[100vw] md:w-full gap-[2vh] lg:gap-0">
-                <SkillCloud items={languages} title="Languages" />
-                <SkillCloud items={technologies} title="Technologies" />
-            </div>
-        </div>
+        </section>
     );
 };
 

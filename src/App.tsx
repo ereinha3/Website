@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 
 import './App.css'; 
-import Marquee from './components/Marquee';
 import Navbar from './components/Navbar';
 import Intro from './components/Intro';
 import About from './components/About';
@@ -10,35 +9,15 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Icons from './components/Icons';
 import ChatBot from './components/ChatBot/ChatBot';
-
+import CurrentlyWorkingOn from './components/CurrentlyWorkingOn';
 
 const App = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
-  const marqueeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const marquee = document.getElementById('marquee');
-    if (!marquee) return;
+    // Add scroll padding to account for fixed navbar
+    document.documentElement.style.scrollPadding = '120px 0 0 0';
     
-    const initialMarqueeOffsetTop = marquee.offsetTop;
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > initialMarqueeOffsetTop) {
-            marquee.classList.add("!text-white")
-        }
-    });
-
-    const links = document.querySelectorAll('a');
-    links.forEach(link => {
-        link.target = "_blank";
-    });
-
-    const overrides = document.getElementsByClassName('link_override');
-    for (let i = 0; i < overrides.length; i++) {
-      const element = overrides[i] as HTMLAnchorElement;
-      element.target = "_self";
-    }
-
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
     
@@ -51,16 +30,14 @@ const App = () => {
       // If user scrolled down and navbar is not already hidden, hide it
       if (currentScroll > lastScrollTop && !navbar.classList.contains('navbar-hidden')) {
         navbar.classList.add('navbar-hidden');
-        marquee.classList.add('marquee-hidden');
       } 
       // If user scrolled up and navbar is hidden, show it
       else if (currentScroll < lastScrollTop && navbar.classList.contains('navbar-hidden')) {
         navbar.classList.remove('navbar-hidden');
-        marquee.classList.remove('marquee-hidden');
-    } 
-    lastScrollTop = currentScroll;
-});
-  } );
+      } 
+      lastScrollTop = currentScroll;
+    });
+  }, []);
 
   useEffect(() => {
     const links = document.querySelectorAll('a');
@@ -75,12 +52,11 @@ const App = () => {
     }
   }, []);
 
-  
   return (
     <div className="App">
-      <Marquee ref={marqueeRef} />
       <Navbar ref={navbarRef} />
       <Intro/>
+      <CurrentlyWorkingOn/>
       <About/>
       <Experience/>
       <Projects/>

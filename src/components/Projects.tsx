@@ -135,9 +135,16 @@ const Projects = () => {
     }, []);
     
     return (
-        <div ref={ref} className="animate-ready w-[85%] md:w-[70%] my-[20vh] md:my-[40vh] mx-auto flex flex-col items-center justify-center" id="projects">
-            <div className="animate-ready delay-100 text-center text-[2.5rem] mb-[5vh] md:my-[10vh] mx-auto">Projects</div>
-            
+        <div ref={ref} className="animate-ready w-[85%] md:w-[70%] mt-[10vh] mb-[10vh] mx-auto flex flex-col items-center justify-center" id="projects">
+            <div className="animate-ready delay-100 text-center text-[2.5rem] mb-[8vh] md:mb-[10vh] mx-auto font-semibold flex items-center justify-center">
+                <div className="animate-ready delay-200 h-full w-[20vw] flex flex-col items-center justify-center">
+                    <div className="animate-ready delay-200 h-[0.3rem] w-full bg-black"/>
+                </div>
+                <p className='mb-2 animate-ready delay-100 px-4 text-4xl md:text-5xl'>Projects</p>
+                <div className="animate-ready delay-200 h-full w-[20vw] flex flex-col items-center justify-center">
+                    <div className="animate-ready delay-200 h-[0.3rem] w-full bg-black"/>
+                </div>
+            </div>
             {/* Introduction Text */}
             <div className="animate-ready delay-200 w-full text-center mb-12">
                 <p className="text-[1.25rem] md:text-[1.5rem] tracking-[.1rem]">

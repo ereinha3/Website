@@ -135,7 +135,7 @@ const ChatBot: React.FC = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="w-[8vw] sm:w-[6vw] md:w-[4vw] h-[8vw] sm:h-[6vw] md:h-[4vw] bg-black hover:bg-gray-800 text-white rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+          className="w-14 h-14 md:w-[4vw] md:h-[4vw] bg-black hover:bg-gray-800 text-white rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
           aria-label="Open chat"
         >
           <div className="w-full h-full flex items-center justify-center">
@@ -148,9 +148,17 @@ const ChatBot: React.FC = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className={`fixed ${window.innerWidth < 768 ? 'inset-0' : 'bottom-[5vh] right-[4vw] md:right-[3vw] h-[500px] w-[80vw] sm:w-[400px] '} bg-white rounded-2xl shadow-xl flex flex-col overflow-hidden z-50 transition-all duration-300 ease-in-out`}>
+        <div 
+          className={`
+            fixed bg-white shadow-xl flex flex-col overflow-hidden z-50 transition-all duration-300 ease-in-out
+            ${window.innerWidth < 768 
+              ? 'top-0 bottom-0 left-4 right-4 my-4 rounded-xl' // Add rounded corners to the main container on mobile
+              : 'bottom-[5vh] right-[4vw] md:right-[3vw] w-[400px] h-[500px] rounded-2xl' // Normal size on desktop
+            }
+          `}
+        >
           {/* Header with close button */}
-          <div className="p-4 border-b border-gray-100 bg-black text-white flex justify-between items-center rounded-t-2xl">
+          <div className={`p-4 border-b border-gray-100 bg-black text-white flex justify-between items-center ${window.innerWidth < 768 ? 'rounded-t-xl' : ''}`}>
             <div>
               <h3 className="text-lg font-semibold">Personal Assistant</h3>
               <p className="text-sm text-gray-300">Ask me anything about my projects and experience</p>
@@ -158,20 +166,20 @@ const ChatBot: React.FC = () => {
             <div className="flex items-center space-x-2">
               <button 
                 onClick={startNewChat}
-                className="text-white hover:text-gray-300 focus:outline-none transition-colors duration-200 p-1 rounded-full hover:bg-gray-700"
+                className="text-white hover:text-gray-300 focus:outline-none transition-colors duration-200 p-2 rounded-full hover:bg-gray-700"
                 aria-label="Start new chat"
                 title="Start new chat"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                 </svg>
               </button>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="text-white hover:text-gray-300 focus:outline-none transition-colors duration-200 p-1 rounded-full hover:bg-gray-700"
+                className="text-white hover:text-gray-300 focus:outline-none transition-colors duration-200 p-2 rounded-full hover:bg-gray-700"
                 aria-label="Close chat"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -179,7 +187,7 @@ const ChatBot: React.FC = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white">
             {messages.length === 0 ? (
               <div className="flex items-center justify-center h-full text-gray-500 text-center px-4">
                 <div className="max-w-xs">
@@ -194,7 +202,7 @@ const ChatBot: React.FC = () => {
                   key={index}
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
-                  <div className="max-w-[80%]">
+                  <div className={`max-w-[80%] ${message.role === 'user' ? 'ml-4' : 'mr-4'}`}>
                     <div
                       className={`rounded-2xl p-3 ${
                         message.role === 'user'
@@ -225,7 +233,7 @@ const ChatBot: React.FC = () => {
           </div>
 
           {/* Input Form */}
-          <form onSubmit={handleSubmit} className="p-4 border-t border-gray-100 bg-white rounded-b-2xl">
+          <form onSubmit={handleSubmit} className={`p-4 border-t border-gray-100 bg-white ${window.innerWidth < 768 ? 'rounded-b-xl' : ''}`}>
             <div className="flex space-x-2">
               <input
                 ref={inputRef}

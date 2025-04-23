@@ -18,22 +18,38 @@ const Intro = () => {
     }, []);
     
     return (
-        <div ref={ref} className="animate-ready flex flex-col items-center justify-center w-screen mx-auto my-[25vh] mb-[20vh] relative">
-            <div className="animate-ready delay-100 flex w-[60vw] justify-center text-[2vh] text-center">Welcome! My name is</div>
-            <div className="animate-ready delay-200 mt-[3vh] flex w-[60vw] justify-center text-center text-[8vh]">Ethan Reinhart.</div>
-            <div className="animate-ready delay-300 mt-[2vh] flex w-[80vw] justify-center text-[5vh] text-center">I am passionate about improving accuracy and efficiency in AI.</div>
-            <div className="animate-ready delay-400 mt-[2vh] w-[80vw] justify-center text-center text-[2vh] py-[1vh]">I am currently working on...
-                <ol className="my-[1em] text-[2.5vh]">
-                    <li className='my-[0.5em]'> 
-                        <span className='font-bold'><a className='hover:text-slate-600' href='/transcript.pdf'>Master's</a></span> in Computer Science at University of Oregon
-                    </li>
-                    <li className='my-[0.5em]'>Graduate <span className='font-bold'><a className='hover:text-slate-600' href='https://github.com/ereinha3/HOUSER'>Research</a></span> under Professor Yu Wang</li>
-                    <li className='my-[0.5em]'><span className='font-bold'><a className='hover:text-slate-600' href='http://www.dermoai.com/'>Dermo</a></span>, a start-up to provide AI dermotology advice for free to all users</li>
-                    <li className='my-[0.5em]'><span className='font-bold'><a className='hover:text-slate-600' href='http://www.beatthebooks.co/'>Beat the Books</a></span>, a start-up providing users with sports predictions</li>
-                </ol>
-                ...but I am always looking for a new challenge!
+        <div ref={ref} className="animate-ready flex flex-col items-left justify-center w-screen mx-auto mt-[15vh] md:mt-[15vh] mb-[5vh] h-auto md:h-[80vh] relative px-4 md:px-0">
+
+            {/* Intro line */}
+            <div className="animate-ready delay-100 text-[5vw] md:text-[2.2vw] tracking-wide text-gray-700 text-left mx-[5vw] md:mx-[10vw] w-[90vw] md:w-[65vw]">
+                Hello, my name is
             </div>
+
+            {/* Name */}
+            <div className="animate-ready delay-200 text-[10vw] md:text-[6vw] font-extrabold text-black tracking-tight text-left mx-[5vw] md:mx-[10vw] w-[90vw] md:w-[65vw]">
+                ETHAN REINHART
+            </div>
+
+            {/* Underline */}
+            <div className="animate-ready delay-250 h-[0.5vw] md:h-[0.3vw] w-[70vw] md:w-[45vw] bg-black mb-[2vh] mx-[5vw] md:mx-[12vw]" />
+
+            {/* Tagline */}
+            <div className="animate-ready delay-300 text-[5vw] md:text-[3vw] font-semibold text-gray-800 text-left leading-tight mt-[2vh] w-[80vw] md:w-[50vw] mx-[5vw] md:mx-[10vw]">
+                Computer Scientist passionate about improving accuracy and efficiency in AI
+            </div>
+
+            {/* Description */}
+            
+            <img 
+                src={'/headshot.png'} 
+                alt={'Headshot'} 
+                className="animate-ready delay-400 absolute right-0 bottom-0 w-[45vw] h-full object-cover hidden md:block"
+            />
+            <div className="animate-ready delay-400 absolute right-0 bottom-0 h-[0.5vw] md:h-[0.3vw] hidden md:block -mb-1 bg-black w-[50vw] z-10" />
+            <div className="animate-ready delay-400 absolute left-0 bottom-0 h-[0.5vw] md:h-[0.3vw] hidden md:block -mb-1 bg-black w-[10vw] z-10" />
+            {/* <div className="animate-ready delay-400 absolute left-[10vw] bottom-0 h-[0.3vw] mb-[1.5vw] w-[40vw] z-10 text-center text-[2.5vw] font-semibold text-gray-800" >Currently working on...</div> */}
         </div>
+
     );
 }
 

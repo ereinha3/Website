@@ -11,11 +11,14 @@ export default {
         'float-1': 'float-1 3s ease-in-out infinite',
         'float-2': 'float-2 4s ease-in-out infinite',
         'float-3': 'float-3 5s ease-in-out infinite',
+        'draw1': 'draw1 5s linear infinite',
+        'draw2': 'draw2 5s linear infinite',
+        'draw3': 'draw3 5s linear infinite',
       },
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '0%': { transform: 'translateX(110vw)' },
+          '100%': { transform: 'translateX(-20vw)' }
         },
         'float-1': {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -29,6 +32,15 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
         },
+        'draw1': {
+          'to': { strokeDashoffset: '0' }
+        },
+        'draw2': {
+          'to': { strokeDashoffset: '0' }
+        },
+        'draw3': {
+          'to': { strokeDashoffset: '0' }
+        }
       },
       borderRadius: {
         '5%': '5%',
@@ -40,6 +52,9 @@ export default {
         'sm': '-2px 4px 4px rgba(0, 0, 0, 0.5)',
         'md': '-3px 8px 6px rgba(0, 0, 0, 0.5)',
         'lg': '-4px 12px 8px rgba(0, 0, 0, 0.5)',
+      },
+      backgroundImage: {
+        'radial-gray': 'radial-gradient(circle at center, rgb(156 163 175) 0%, rgb(209 213 219) 50%, rgb(243 244 246) 100%)',
       }
     },
   },
