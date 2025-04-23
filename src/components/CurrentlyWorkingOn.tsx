@@ -53,7 +53,7 @@ const CurrentlyWorkingOn = () => {
                     Current Work
                 </h2>
                 <div className="animate-ready delay-300 h-[0.3rem] w-[10%] bg-black mb-8"></div>
-                <p className="animate-ready delay-350 text-lg text-gray-600 max-w-2xl text-center">
+                <p className="animate-ready delay-350 text-2xl text-gray-600 max-w-2xl text-center">
                     I am currently working on these projects and always looking for new challenges!
                 </p>
             </div>

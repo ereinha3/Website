@@ -58,17 +58,16 @@ const About = () => {
           <div className="space-y-8 ml-0 lg:ml-[10vw]">
             <div className="animate-ready delay-300 bg-white p-4 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Education & Research</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-xl text-gray-700 leading-relaxed">
                 Currently pursuing a Master's in Computer Science at the University of Oregon. Researching Recommender Systems, RAG architecture, and LLM evaluation.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+                <br/>
                 Completed Bachelor's degrees in Computer Science (AI concentration) and Applied Mathematics.
               </p>
             </div>
 
             <div className="animate-ready delay-400 bg-white p-4 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Entrepreneurship</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-xl text-gray-700 leading-relaxed">
                 Founded <a href="https://www.hartrach.com/" className="text-blue-600 hover:text-blue-800 transition-colors font-semibold">HartRach LLC</a>, a company focused on developing innovative solutions for the real world. <span className='font-bold text-xl'> Big things coming soon.</span>
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
