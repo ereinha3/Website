@@ -68,7 +68,9 @@ const CurrentlyWorkingOn = () => {
                         rel="noopener noreferrer"
                         className="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
                     >
-                        <div className="aspect-video w-full overflow-hidden">
+                        <div className="aspect-[16/9] md:aspect-[5/3] lg:aspect-[3/2] w-full overflow-hidden">
+
+
                             <img 
                                 src={project.image} 
                                 alt={project.title}
@@ -76,9 +78,9 @@ const CurrentlyWorkingOn = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         </div>
-                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                            <h3 className="text-xl font-bold mb-1">{project.title}</h3>
-                            <p className="text-sm text-gray-200">{project.subtitle}</p>
+                        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8 text-white">
+                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-1">{project.title}</h3>
+                            <p className="text-sm md:text-base lg:text-lg text-gray-200">{project.subtitle}</p>
                         </div>
                     </a>
                 ))}
