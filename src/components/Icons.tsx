@@ -42,6 +42,11 @@ const Icons = () => {
         className: "text-black hover:text-gray-700 transition-colors duration-200"
     };
 
+    const toggleStyle = {
+        size: '55%',
+        className: "text-white transition-colors duration-200"
+    };
+
     const toggleButtonClasses = `
         fixed 
         bottom-[5vh] 
@@ -61,32 +66,32 @@ const Icons = () => {
         {
             href: "https://github.com/ereinha3",
             label: "GitHub Profile",
-            icon: <FaGithub {...iconStyle} />
+            icon: <FaGithub size={iconStyle.size} className={iconStyle.className} />
         },
         {
             href: "https://www.linkedin.com/in/ethan-reinhart-3bb28b285/",
             label: "LinkedIn Profile",
-            icon: <FaLinkedin {...iconStyle} />
+            icon: <FaLinkedin size={iconStyle.size} className={iconStyle.className} />
         },
         {
             href: "https://leetcode.com/u/ereinha/",
             label: "LeetCode Profile",
-            icon: <SiLeetcode {...iconStyle} />
+            icon: <SiLeetcode size={iconStyle.size} className={iconStyle.className} />
         },
         {
             href: "https://medium.com/@ethanreinhart",
             label: "Medium Blog",
-            icon: <FaMedium {...iconStyle} />
+            icon: <FaMedium size={iconStyle.size} className={iconStyle.className} />
         },
         {
             href: "mailto:ereinha3@uoregon.edu",
             label: "Email Me",
-            icon: <MdEmail {...iconStyle} />
+            icon: <MdEmail size={iconStyle.size} className={iconStyle.className} />
         },
         {
             href: "tel:+13108036441",
             label: "Call Me",
-            icon: <FaPhone {...iconStyle} />
+            icon: <FaPhone size={iconStyle.size} className={iconStyle.className} />
         }
     ];
 
@@ -120,9 +125,9 @@ const Icons = () => {
                 aria-expanded={isExpanded}
             >
                 {isExpanded ? (
-                    <RiCloseFill size="55%" />
+                    <RiCloseFill size={iconStyle.size} className={toggleStyle.className} />
                 ) : (
-                    <RiMenuFill size="55%" />
+                    <RiMenuFill size={iconStyle.size} className={toggleStyle.className} />
                 )}
             </button>
         </>
