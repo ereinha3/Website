@@ -115,7 +115,7 @@ const Experience = () => {
     }, []);
     
     return (
-        <section id="experience" className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white py-24 pt-[20vh]">
+        <section id="experience" className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white pb-24">
             <div ref={ref} className="animate-ready mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Title Section */}
                 <div className="animate-ready delay-100 flex flex-col items-center justify-center w-full mb-[10vh]">

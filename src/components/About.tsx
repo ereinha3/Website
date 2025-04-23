@@ -37,7 +37,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative min-h-screen bg-gradient-to-b from-white to-gray-50 py-24 mt-[10vh]">
+    <section id="about" className="relative min-h-screen bg-gradient-to-b from-white to-gray-50 py-24 pb-[30vh]">
       <div ref={ref} className="animate-ready mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title Section */}
         <div className="animate-ready delay-100 flex items-center justify-center w-full mb-[10vh]">
@@ -69,8 +69,7 @@ const About = () => {
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Entrepreneurship</h3>
               <p className="text-xl text-gray-700 leading-relaxed">
                 Founded <a href="https://www.hartrach.com/" className="text-blue-600 hover:text-blue-800 transition-colors font-semibold">HartRach LLC</a>, a company focused on developing innovative solutions for the real world. <span className='font-bold text-xl'> Big things coming soon.</span>
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <br/>
                 Current Projects: 
                 <a href="https://dermoai.com" className="text-blue-600 hover:text-blue-800 transition-colors font-semibold"> Dermo </a> 
                  and 
@@ -80,13 +79,11 @@ const About = () => {
 
             <div className="animate-ready delay-500 bg-white p-4 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Personal</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-xl text-gray-700 leading-relaxed">
                 I am passionate about weightlifting and have been lifting for 4 years.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <br/>
                 I am a member of the Alpha Tau Omega fraternity and Oregon Quant Group.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <br/>
                 I love meeting new people and making connections.<br></br> Let's connect on{' '}
                 <a 
                   href="https://www.linkedin.com/in/ethan-reinhart-3bb28b285/" 
