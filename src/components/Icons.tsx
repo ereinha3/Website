@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { 
     FaGithub, 
     FaLinkedin, 
@@ -66,34 +66,35 @@ const Icons = () => {
         {
             href: "https://github.com/ereinha3",
             label: "GitHub Profile",
-            icon: <FaGithub size={iconStyle.size} className={iconStyle.className} />
+            icon: <FaGithub size={iconStyle.size} className={iconStyle.className} /> as React.ReactElement
         },
         {
             href: "https://www.linkedin.com/in/ethan-reinhart-3bb28b285/",
             label: "LinkedIn Profile",
-            icon: <FaLinkedin size={iconStyle.size} className={iconStyle.className} />
+            icon: <FaLinkedin size={iconStyle.size} className={iconStyle.className} /> as React.ReactElement
         },
         {
             href: "https://leetcode.com/u/ereinha/",
             label: "LeetCode Profile",
-            icon: <SiLeetcode size={iconStyle.size} className={iconStyle.className} />
+            icon: <SiLeetcode size={iconStyle.size} className={iconStyle.className} /> as React.ReactElement
         },
         {
             href: "https://medium.com/@ethanreinhart",
             label: "Medium Blog",
-            icon: <FaMedium size={iconStyle.size} className={iconStyle.className} />
+            icon: <FaMedium size={iconStyle.size} className={iconStyle.className} /> as React.ReactElement
         },
         {
             href: "mailto:ereinha3@uoregon.edu",
             label: "Email Me",
-            icon: <MdEmail size={iconStyle.size} className={iconStyle.className} />
+            icon: <MdEmail size={iconStyle.size} className={iconStyle.className} /> as React.ReactElement
         },
         {
             href: "tel:+13108036441",
             label: "Call Me",
-            icon: <FaPhone size={iconStyle.size} className={iconStyle.className} />
+            icon: <FaPhone size={iconStyle.size} className={iconStyle.className} /> as React.ReactElement
         }
     ];
+    
 
     return (
         <>
