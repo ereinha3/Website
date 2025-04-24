@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Icons from './components/Icons';
 import ChatBot from './components/ChatBot/ChatBot';
 import CurrentlyWorkingOn from './components/CurrentlyWorkingOn';
+import Awards from './components/Awards'
 
 const App = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -60,6 +61,7 @@ const App = () => {
       <About/>
       <Experience/>
       <Projects/>
+      <Awards/>
       <Contact/>
       <Icons/>
       <ChatBot />

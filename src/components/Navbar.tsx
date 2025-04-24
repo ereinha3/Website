@@ -12,7 +12,7 @@ const Navbar = forwardRef<HTMLDivElement>((_, ref) => {
             setScrolled(isScrolled);
             
             // Determine active section based on scroll position
-            const sections = ['currently-working-on', 'about', 'experience', 'projects', 'contact'];
+            const sections = ['currently-working-on', 'about', 'experience', 'projects', 'achievements', 'contact'];
             const currentSection = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -45,6 +45,7 @@ const Navbar = forwardRef<HTMLDivElement>((_, ref) => {
         { id: 'about', label: 'About Me' },
         { id: 'experience', label: 'Experience' },
         { id: 'projects', label: 'Projects' },
+        { id: 'achievements', label: 'Achievements'},
         { id: 'contact', label: 'Contact' },
         { 
             id: 'resume',

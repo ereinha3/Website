@@ -59,9 +59,13 @@ const About = () => {
             <div className="animate-ready delay-300 bg-white p-4 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Education & Research</h3>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Currently pursuing a Master's in Computer Science at the University of Oregon. Researching Recommender Systems, RAG architecture, and LLM evaluation.
+                Researching Recommender Systems, RAG architecture, and LLM evaluation.
                 <br/>
-                Completed Bachelor's degrees in Computer Science (AI concentration) and Applied Mathematics.
+                Currently pursuing a Master's in Computer Science at the University of Oregon: GPA 4.0
+                <br/>
+                Completed Bachelor's degrees in Computer Science with a concentration in AI: GPA 4.06
+                <br/>
+                Completed Bachelor's degrees in  Applied Mathematics: GPA 3.92
               </p>
             </div>
 
@@ -69,11 +73,6 @@ const About = () => {
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Entrepreneurship</h3>
               <p className="text-xl text-gray-700 leading-relaxed">
                 Founded <a href="https://www.hartrach.com/" className="text-blue-600 hover:text-blue-800 transition-colors font-semibold">HartRach LLC</a>, a company focused on developing innovative solutions for the real world. <span className='font-bold text-xl'> Big things coming soon.</span>
-              <br/>
-                Current Projects: 
-                <a href="https://dermoai.com" className="text-blue-600 hover:text-blue-800 transition-colors font-semibold"> Dermo </a> 
-                 and 
-                <a href="http://www.beatthebooks.co/" className="text-blue-600 hover:text-blue-800 transition-colors font-semibold"> Beat the Books</a>.
               </p>
             </div>
 

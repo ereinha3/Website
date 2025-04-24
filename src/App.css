@@ -72,11 +72,6 @@ html {
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
 
-/* Section visibility classes */
-.about.visible, .experience.visible, .projects.visible, .contact-container.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* Animation keyframes */
 @keyframes fadeIn {
@@ -135,23 +130,7 @@ html {
     animation: float 3s ease-in-out infinite;
 }
 
-/* Project card transitions */
-.project {
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.project:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Section transitions */
-.about, .experience, .projects, .contact-container {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
 
 /* Button hover effects */
 button {
